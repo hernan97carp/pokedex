@@ -1,0 +1,75 @@
+
+
+.wrap{
+    background-color: black;
+    width: 100%;
+    height: 10%;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-around;
+}
+
+
+.buttonNav{
+
+
+cursor: pointer;
+outline: none;
+text-decoration: none;
+border: none;
+width:100%;
+height: 60%;
+border-radius: 1rem;
+background:white;
+box-shadow: 0 2px 8px -1px rgb(219, 209, 209);
+font-family: 'Montserrat', sans-serif;
+transition: all 0.5s ease;
+padding: 0.5rem;
+margin: 0.6rem auto;
+}
+
+.buttonNav:hover{
+    box-shadow: 0 0px 0px 0 white;
+    transform: translateY(-3px);
+    color: white;
+    background-color: #232631;
+    border: 1px solid white;
+    box-shadow: 0 2px 8px -1px #ffc000;
+    font-family: 'Montserrat', sans-serif;
+    
+   
+}
+
+
+.conteinerImage{
+ box-sizing: border-box;
+ margin-top:0px auto;
+ background-color: black;
+}
+
+
+
+.imagenPokeball{
+    box-sizing: border-box;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 100%;
+ animation-name:girarb;
+ animation-duration: 2s;
+animation-iteration-count: infinite;
+ animation-timing-function: linear;
+ display: inline-block;
+ margin-top: 0.2rem;
+}
+
+@keyframes girarb{
+    from{
+        transform: rotate(360deg);
+    }to{
+
+        transform: rotate(0deg);
+    }
+}

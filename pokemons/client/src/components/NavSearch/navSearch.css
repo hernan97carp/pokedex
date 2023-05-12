@@ -1,0 +1,63 @@
+
+.navForm{
+   
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+   
+}
+.navInput{
+outline: 'none';
+width: 15rem;
+height:3rem;
+border-radius: 2rem;
+border: 2px solid black;
+background: white;  
+outline: none;
+
+color: black;
+font-size: 14px;
+transition: 0.4s; 
+line-height: 40px;
+
+
+font-family: 'Montserrat', sans-serif;
+}
+.navButton{
+
+width: auto;
+margin: 0.1rem;
+padding: 0.3rem;
+border-radius: 30%;  
+border: 1px solid blanchedalmond;
+background: white;
+
+
+}
+
+.navButton:hover{
+    background-color: white;
+border: 1px solid blanchedalmond;
+border-radius: 100%;
+
+
+}
+
+.pokeball{
+width:2rem;
+border-radius: 100%;
+cursor: pointer;
+
+}
+
+
+@media (max-width:292px){
+    .navInput{
+     width: 50%;
+
+    }
+    }

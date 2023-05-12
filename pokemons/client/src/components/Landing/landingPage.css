@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900');
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+.landingConteiner{
+ 
+  height: 100vh;
+   width: 100vw;
+
+     align-items: center;
+     padding: 30px;
+     max-width:400px;
+     max-height: 600px;
+     padding: 2rem;
+background-color:#ffc000;
+margin-top: 10%;
+margin-left: 40%;
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+align-content: center;
+justify-content: center;
+}
+
+
+.landingText{
+
+    font-family: 'Montserrat', sans-serif; 
+     font-size: 2rem;
+     width: 100%;
+     margin-top: 1px;
+     margin-bottom: 20px;
+     text-align: center;
+     height: 20px;
+    color: white;
+    
+    
+  
+
+}
+
+
+.landingImage{
+
+width: 100%;
+height: 100%;
+box-sizing: border-box;
+}
+
+
+
+
+
+
+/*** ESTILOS BOTÓN GROW BOX ***/
+.ov-btn-grow-box {
+ 
+  cursor: pointer;
+ 
+  width: 100%;
+  height: 90%;
+    font-family: 'Montserrat', sans-serif;
+    background: #ffc000; /* color de fondo */
+    color: rgb(53, 212, 122); /* color de fuente */
+    border: 2px solid #463e21; /* tamaño y color de borde */
+    padding: 10px 10px;
+    border-radius: 3px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom:20px;
+  
+  }
+  
+  .ov-btn-grow-box:hover {
+    color: #fff;/* color de fuente hover */
+    border:1px solid white;
+    
+  }
+  .ov-btn-grow-box::after {
+    content: "";
+    background: black; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: scale(0, 0);
+    transition: all 0.3s ease;
+  }
+  .ov-btn-grow-box:hover::after {
+    transition: all 0.3s ease-out;
+    transform: scale(1, 1);
+  }
+
+  @media (max-width:1555px){
+    .landingConteiner{
+    
+      margin-top: 10%;
+    
+
+    }
+ 
+
+  }
+
+  @media (max-width:1167px){
+    .landingConteiner{
+    
+   margin: auto;
+margin-top: 20%;
+    }
+
+  }
+  @media (max-width:239px){
+    .landingConteiner{
+    
+   margin: auto;
+   padding-top: 10px;
+margin-top: 20%;
+    }
+    .landingText{
+      overflow: hidden;
+      font-size: 15px;
+    
+    }
+ 
+
+  }

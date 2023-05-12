@@ -1,0 +1,143 @@
+
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto; 
+    grid-gap: 1rem;
+    margin-left: 2.5%;
+    margin-top: 2.5%;
+    padding-bottom: 2%;  
+}
+
+.home{
+    background: #ffc000;
+    min-height: 100vh;
+    background-size: 100% 100%;
+}
+
+.poke{
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 100px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    display: block;
+    padding: 10px;
+    width:6%;
+    margin-left: 70%;
+    margin-top: 1%;
+
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0 2px 8px -1px white;
+    animation: showText 1s 1s linear forwards;
+    transition: all 0.5s ease;
+}
+
+.poke:hover{
+    box-shadow: 0 0px 0px 0 rgba(0, 40, 120, 0);
+    transform: translateY(-5px);
+}
+
+.pika{
+    width: 40px;
+    border-radius: 100%;
+}
+
+.sortfilter{
+    display: flex;
+    justify-content:center;
+    padding-top: 1%;
+    color: #ffc000;
+    
+}
+
+.sortfilter select option{
+    padding:3%;
+    color: black;
+  
+}
+
+select {
+    cursor: pointer;
+    box-shadow: white;
+    background: black;
+    border: 2px solid black;
+    width: 8%;
+    height: 4%;
+    font-size: 0.8em;
+    padding-top: 1em;
+    padding-right: 0rem;
+    padding-bottom: 1em;
+    padding-left: 0.2rem;
+    margin: 0.8rem;
+    margin-left: 1Srem;
+    margin-right: 2rem;
+    border-radius: 20px;
+    outline: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+select option{
+    background-color: white;
+}
+
+/* Loading  */
+
+.loading{
+    position: absolute;
+    width: 100%;
+    max-height: 100vh;
+    background: #ffc000;
+    padding-top: 5%;
+    
+}
+
+.loadingtext{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: black;
+}
+
+.notfound{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 99vw;
+    max-width: 100vw;
+
+    animation-duration: 450ms;
+    animation-timing-function: cubic-bezier(0, 0.5, 0.25, 1.25);
+    animation-fill-mode: both;
+    animation-name: picImage;
+}
+
+.notfound span{
+    margin-top: 1%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    display: block;
+    color: black;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+
+@keyframes picImage {
+    from {
+    opacity: 0;
+    transform: scale(1.2) translateY(-1rem);
+    }
+    to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    }
+}
+
