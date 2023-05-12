@@ -6,47 +6,35 @@ const router = Router();
 const {Sequelize} = require('sequelize');
 const {Pokemons, Types} = require('../db.js');
 
-router.get('/', async (req, res, next)=>{
-    const name = req.query.name.toLowerCase()
-    try {
-        if(name){
-            res.status(200).json(await getPokemonApiByName(name))
-        }   
-        return res.status(404).json({"message": "Name not found"});
+
+
+router.get('/', async (req, res, next) => {
+
+    try {       
+        const {name} = req.query;
+        if (name){
+            // -------------------------------- consultar por name           
+            // busqueda en la API externa
+            let pokemonSearch = await getPokemonApiByName(name);
+
+            // busqueda en la base de datos
+            if (pokemonSearch.error){ // no encontrado en la API externa
+                pokemonSearch = await getPokemonsDbByName(name); 
+
+                if (!pokemonSearch){
+                    return res.status(404).json({"message": "Pokemon not found"});
+                }
+            }
+            return res.status(200).json(pokemonSearch);
+        }
+
+        // ------------------------------------- retornar todos los pokemon
+        const allPokemons = await getAllPokemons(); 
+        return res.status(200).json(allPokemons);
     } catch (error) {
-      res.status(404).json({ error: error.message })
+        next(error);
     }
-
-
-//  try{
-//     const {name} = req.query;
-//    if(name){
-//     // -------------------------------- consultar por name           
-//             // busqueda en la API externa
-//       let pokemonSearch = await getPokemonApiByName(name)      
-//         //busqueda en la base de datos
-//         if(pokemonSearch.error){
-//             //no encontrado en la api externa
-//             pokemonSearch = await getPokemonsDbByName(name)
-
-//             if(!pokemonSearch){
-//                 res.status(404).json({"message": "pokemon not found"})
-//             }
-//             return res.status(200).json(pokemonSearch)
-//         }
-
-//    }
-//        // ------------------------------------- retornar todos los pokemon
-//        const allPokemons = await getAllPokemons(); 
-//        return res.status(200).json(allPokemons);
-//  }catch(error){
-//     next(error)
-//  }
-
-
-})
-
-
+});
 
 
 
