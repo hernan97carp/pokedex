@@ -15,9 +15,9 @@ import Card from "../Card/Card";
 import NavBar from "../NavBar/NavBar";
 import random from "../../images/random.png";
 import style from "./Home.module.css";
-import pika from "../../images/reload1.webp";
+// import pika from "../../images/reload1.webp";
 import NavSearch from "../NavSearch/NavSearch";
-import pikapika from "../../images/loading.gif";
+// import pikapika from "../../images/loading.gif";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -72,3 +72,55 @@ export default function Home() {
     </div>
   );
 }
+
+// import"./home.css"
+// import NavBar from "../NavBar/NavBar"
+// import NavSearch from "../NavSearch/NavSearch"
+// import {useDispatch, useSelector} from "react-redux"
+// import {useState, useEffect } from "react"
+// import {getPokemons, filterCreated, orderByNameOrStrengh, getTypes, removeDetail, filterPokemonsByType, reloadPokemons } from '../../redux/Action/action';
+// import random from '../../images/random.png';
+// import {Link} from "react-router-dom"
+// import Card from "../Card/Card"
+// export default function Home(){
+//     const dispatch = useDispatch()
+//     const allPokemons = useSelector(state => state.pokemons)
+//     const [currentPage, setCurrentPage] = useState(1);
+//     const [pokemonsPerPage, setPokemonsPerPage] = useState(12)
+//     const indexOfLastPokemon = currentPage * pokemonsPerPage;
+//     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
+//     const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon)
+//     useEffect(() => {
+//             dispatch(getPokemons());
+
+//     },[dispatch])
+
+// return(
+
+//  <>
+// <NavBar></NavBar>
+// <NavSearch></NavSearch>
+// <div className="cards">
+// {
+//  currentPokemons.map( el => {
+//  return(
+// <div>
+
+// <Link to={"/home/" + el.id} style={{textDecoration:'none'}} key={el.id}>
+//                                 <Card name={el.name} types={el.types} image={el.img ? el.img : random} id={el.id} weight={el.weight} height={el.height} />
+//                             </Link>
+
+// </div>
+
+//  )
+
+//  })
+
+// }
+
+// </div>
+//  </>
+
+// )
+
+// }
