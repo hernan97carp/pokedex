@@ -1,80 +1,61 @@
-require('dotenv').config();
 const { DataTypes } = require('sequelize');
-
 // Exportamos una funcion que define el modelo
 // Luego le injectamos la conexion a sequelize.
-
-
 module.exports = (sequelize) => {
   // defino el modelo
-  sequelize.define('pokemons', {
+  sequelize.define('pokemon', {
     id: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
+      allowNull: false,
       primaryKey: true,
     },
 
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
-      validate: {
-        len: [0, 20]
-      }
+      unique: true
     },
+
     hp: {
       type: DataTypes.INTEGER,
-      defaultValue: 0,
-      validate: {
-        min: 0,
-        max: 999
-      }
+      defaultValue: '50'
     },
+
     attack: {
       type: DataTypes.INTEGER,
-      defaultValue: 0,
-      validate: {
-        min: 0,
-        max: 999
-      }
+      defaultValue: '50'
     },
+
     defense: {
       type: DataTypes.INTEGER,
-      defaultValue: 0,
-      validate: {
-        min: 0,
-        max: 999
-      }
+      defaultValue: '50'
     },
+
     speed: {
       type: DataTypes.INTEGER,
-      defaultValue: 0,
-      validate: {
-        min: 0,
-        max: 999
-      }
+      defaultValue: '50'
     },
-    height:{
+
+    height: {
       type: DataTypes.INTEGER,
-      defaultValue: 0,
-      validate: {
-        min: 0,
-        max: 999
-      }
+      defaultValue: '50'
     },
-    weight:{
+
+    weight: {
       type: DataTypes.INTEGER,
-      defaultValue: 0,
-      validate: {
-        min: 0,
-        max: 9999
-      }
+      defaultValue: '50'
     },
-    image: {
-      type: DataTypes.STRING,
+
+    createdInDb: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true,
     },
   },
-  {
-    timestamps: false,
-  });
+  { 
+    timestamps: false, 
+    freezeTableName: true,
+  }
+  );
 };
