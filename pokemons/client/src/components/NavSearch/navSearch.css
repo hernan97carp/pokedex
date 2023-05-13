@@ -16,10 +16,10 @@ width: 15rem;
 height:3rem;
 border-radius: 2rem;
 border: 2px solid black;
-background: white;  
+background: rgba(86, 58, 224, 0.663);  
 outline: none;
 
-color: black;
+color: white;
 font-size: 14px;
 transition: 0.4s; 
 line-height: 40px;

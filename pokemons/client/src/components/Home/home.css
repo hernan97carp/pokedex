@@ -11,7 +11,7 @@
 }
 
 .home{
-    background: #ffc000;
+
     min-height: 100vh;
     background-size: 100% 100%;
 }
@@ -93,7 +93,7 @@ select option{
     position: absolute;
     width: 100%;
     max-height: 100vh;
-    background: #ffc000;
+
     padding-top: 5%;
     
 }

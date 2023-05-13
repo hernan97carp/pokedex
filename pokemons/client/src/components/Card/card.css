@@ -2,14 +2,13 @@
 .card{
  width: 290px;
  height: 390px;
- background-color: white;
- border:1px solid gold;
+ background-color: #060e28bb;
+
 display: flex;
 flex-direction: column;
 flex-grow: wrap;
 text-align: center;
 float: left;
-
 margin: 1rem 0px 1rem 2rem;
 border-radius: 1rem;
 border:1px solid blanchedalmond;
@@ -17,7 +16,7 @@ transition: all 0.4s ease;
 box-sizing: border-box;
 }
 .name{
-  color: black;
+  color: white;
   font-size: 2rem;
   font-family: 'Montserrat', sans-serif; 
 }
@@ -28,7 +27,7 @@ box-sizing: border-box;
 
 .typetitle{
 font-family:'Montserrat', sans-serif ;
-color: black;
+color: white;
 }
 
 .types{
@@ -39,7 +38,7 @@ padding: 1px;
 
 
 .aboutitle{
- color: black;
+ color: white;
  font-family:'Montserrat', sans-serif ;
 
 }
@@ -60,13 +59,15 @@ border-radius: 0rem 0rem 1rem 1rem;
 
 .pokweight{
  color: white;
-
+ font-family:'Montserrat', sans-serif ;
+ font-size: 0.7rem;
 }
 
 
 .pokheight{
  color: white;
- 
+ font-family:'Montserrat', sans-serif ;
+ font-size: 0.7rem;
 }
 .icon{
   width: 1rem;
@@ -76,8 +77,9 @@ border-radius: 0rem 0rem 1rem 1rem;
 
 
 .card:hover{
-transform:translateY(-15px)
-
+transform:translateY(-15px);
+box-shadow: 0px 1px 10px 3px #fdf972;
+background: #060e28;
 
 }
 
