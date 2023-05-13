@@ -14,7 +14,7 @@ import Card from "../Card/Card";
 // import Paginado from '../Paginado/Paginado';
 import NavBar from "../NavBar/NavBar";
 import random from "../../images/random.png";
-import style from "./Home.module.css";
+import "./home.css"
 // import pika from "../../images/reload1.webp";
 import NavSearch from "../NavSearch/NavSearch";
 // import pikapika from "../../images/loading.gif";
@@ -31,10 +31,7 @@ export default function Home() {
   const [pokemonsPerPage, setPokemonsPerPage] = useState(12);
   const indexOfLastPokemon = currentPage * pokemonsPerPage;
   const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
-  const currentPokemons = allPokemons.slice(
-    indexOfFirstPokemon,
-    indexOfLastPokemon
-  );
+  const currentPokemons = allPokemons
 
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -45,7 +42,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={style.home}>
+    <div className="home">
       <NavBar />
       <NavSearch />
 

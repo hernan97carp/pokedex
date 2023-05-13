@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900');
+.card{
+ width: 290px;
+ height: 390px;
+ background-color: white;
+ border:1px solid gold;
+display: flex;
+flex-direction: column;
+flex-grow: wrap;
+text-align: center;
+float: left;
+
+margin: 1rem 0px 1rem 2rem;
+border-radius: 1rem;
+border:1px solid blanchedalmond;
+transition: all 0.4s ease;
+box-sizing: border-box;
+}
+.name{
+  color: black;
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif; 
+}
+
+.img{
+    width: 100%;
+}
+
+.typetitle{
+font-family:'Montserrat', sans-serif ;
+color: black;
+}
+
+.types{
+padding: 1px;
+
+
+}
+
+
+.aboutitle{
+ color: black;
+ font-family:'Montserrat', sans-serif ;
+
+}
+.about{
+
+background-color: black;
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+align-content: center;
+justify-content: space-evenly;
+align-items: center;
+width: 100%;
+height: 100%;
+border-radius: 0rem 0rem 1rem 1rem;
+
+}
+
+.pokweight{
+ color: white;
+
+}
+
+
+.pokheight{
+ color: white;
+ 
+}
+.icon{
+  width: 1rem;
+}
+
+
+
+
+.card:hover{
+transform:translateY(-15px)
+
+
+}
+
+/* width: 290px;
+height: 390px; */
+
+
+@media (max-width:1287px){
+  .card{
+    width: 250px;
+    height: 370px;
+  padding:auto;
+  margin: 1rem 1rem 1rem 1rem;
+ 
+  
+  }
+  .name{
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width:1126px){
+  .card{
+    width: 230px;
+    height: 370px;
+  padding:auto;
+  margin: 1em 1rem 1rem 1rem;
+  
+  }
+}
+
+@media (max-width:1007px){
+.card{
+  display: flex;
+  width: 200px;
+  height: 380px;
+padding:auto;
+margin: 1rem 1rem 0rem 1rem;
+
+}
+
+
+}
+
+  
+  
