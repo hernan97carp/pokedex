@@ -2,13 +2,9 @@
 
 import React from 'react';
 import "./card.css"
-export default function Card({ name, types, image, id, weight, height}){
+export default function Card({ name, types, image, weight, height}){
 
-    let sprite;
-    if(id >= 1 && id <= 100){
-        sprite = true
-    }
-
+ 
 
     return(
         <div className="card">

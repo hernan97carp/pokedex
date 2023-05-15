@@ -43,6 +43,7 @@ function rootReducer (state = initialState, action){
             }    
         
         case "GET_TYPES":
+            
             return {
                 ...state,
                 types: action.payload,
@@ -77,7 +78,7 @@ function rootReducer (state = initialState, action){
             
             return {
                 ...state,
-                pokemons: statusFiltered.length ? statusFiltered : [`${action.payload} Pokemons`]
+                pokemons: statusFiltered.length ? statusFiltered : allPokemons
             }
 
         case "FILTER_CREATED":

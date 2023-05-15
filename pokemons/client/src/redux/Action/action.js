@@ -24,17 +24,34 @@ export function reloadPokemons(){
   }
 }
 
-export function getTypes(){
-  return async function(dispatch){
-      var info = await axios.get("http://localhost:3001/types",{
+export  function getTypes(){
+try{
+     return async function(dispatch){
+      let info = await axios.get("http://localhost:3001/types",{
 
       })
-
-      return dispatch({ 
-          type:"GET_TYPES",
-          payload: info.data
+      return dispatch({
+        type: "GET_TYPES",
+        payload: info.data
       })
-  }
+     }
+    
+}catch(error){
+  console.log("error")
+
+}
+
+
+  // return async function(dispatch){
+  //     var info = await axios.get("http://localhost:3001/types",{
+
+  //     })
+
+  //     return dispatch({ 
+  //         type:"GET_TYPES",
+  //         payload: info.data
+  //     })
+  // }
 }
 
 export function postPokemon(payload){
@@ -60,10 +77,6 @@ export function getPokemonName(name){
           })
       } catch(error){
           console.log(error)
-          return dispatch({
-              type:"GET_POKEMON_NAME",
-              payload: ['Pokemon']
-          })
       }
   }
 }

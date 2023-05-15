@@ -2,7 +2,7 @@
 .card{
  width: 290px;
  height: 390px;
- background-color: #060e28bb;
+ background-color: rgb(243, 249, 245);
 
 display: flex;
 flex-direction: column;
@@ -11,12 +11,12 @@ text-align: center;
 float: left;
 margin: 1rem 0px 1rem 2rem;
 border-radius: 1rem;
-border:1px solid blanchedalmond;
+border:1px solid rgb(16, 3, 3);
 transition: all 0.4s ease;
 box-sizing: border-box;
 }
 .name{
-  color: white;
+  color: #000000;
   font-size: 2rem;
   font-family: 'Montserrat', sans-serif; 
 }
@@ -27,7 +27,7 @@ box-sizing: border-box;
 
 .typetitle{
 font-family:'Montserrat', sans-serif ;
-color: white;
+color: rgb(3, 0, 0);
 }
 
 .types{
@@ -38,7 +38,7 @@ padding: 1px;
 
 
 .aboutitle{
- color: white;
+ color: black;
  font-family:'Montserrat', sans-serif ;
 
 }
@@ -78,10 +78,31 @@ border-radius: 0rem 0rem 1rem 1rem;
 
 .card:hover{
 transform:translateY(-15px);
-box-shadow: 0px 1px 10px 3px #fdf972;
-background: #060e28;
+box-shadow: 0px 1px 10px 3px #fdf87293;
+background: #000000;
+border: 1px solid #fad964;
 
 }
+
+
+.card:hover .aboutitle{
+color:#fad964 ;
+
+}
+.card:hover .typetitle{
+  color: #fad964;
+  
+}
+.card:hover .name{
+  color: #fad964;
+}
+.card:hover .pokheight{
+  color: #fad964;
+}
+.card:hover .pokweight{
+  color: #fad964;
+}
+
 
 /* width: 290px;
 height: 390px; */

@@ -15,28 +15,6 @@ const random = (arrlength) => {
     return number
 }
 
-const arreglo = (arr) => {
-    let results = []
-
-    if(arr[0] && arr[0].hasOwnProperty('move')){
-        const one = arr[random(arr.length)];
-        const two = arr[random(arr.length)];
-        const three = arr[random(arr.length)];
-
-        results.push(one.move.name, two.move.name, three.move.name)
-    } else{
-        if(arr.length > 1){
-        const one = arr[random(arr.length)]['location_area'].name;
-        const two = arr[random(arr.length)]['location_area'].name;
-
-        one !== two ? results.push(one, two) : results.push(one)
-        } else{
-        arr[0] ? results.push(arr[0]['location_area'].name) : results
-        }
-    }
-    return results
-}
-
 const evolution = async (evol) => {
     try {
         let evoChain = [];
@@ -94,6 +72,7 @@ const getApiInfo = async () => {
         });
         }
         return pokemonInfo;
+
 }
 
 const getDbInfo = async () => {
@@ -144,8 +123,6 @@ const getPokeInfo = async (id) => {
         habitat: speciesresult.habitat ? speciesresult.habitat.name : null,
         description: allDescriptions[random(allDescriptions.length)]['flavor_text'].replace('POKéMON', 'Pokémon'),
         species: speciespok[0].genus ? speciespok[0].genus : null,
-        locations: arreglo(locations.data),
-        moves: arreglo(moves),
         // STATS
         id: results.id,
         name: results.name,
@@ -232,7 +209,9 @@ router.get("/pokemons", async (req, res) => {
 
 
 router.get('/types', async (req, res) => {
-    const typesApi = await axios.get("https://pokeapi.co/api/v2/type");
+try{
+
+  const typesApi = await axios.get("https://pokeapi.co/api/v2/type");
     const types = typesApi.data.results;
     types.forEach( el => {
         Type.findOrCreate({
@@ -241,6 +220,11 @@ router.get('/types', async (req, res) => {
     })
     const allTypes = await Type.findAll();
     return res.send(allTypes);
+}catch(error){
+
+    console.log("error")
+}
+
 })
 
 router.post('/pokemons', async (req, res) => {
