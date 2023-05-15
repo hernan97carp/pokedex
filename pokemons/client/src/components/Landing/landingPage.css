@@ -3,9 +3,20 @@
   margin: 0px;
   padding: 0px;
 }
+.conteiner{
+  display:flex;
+  background-image:url('../../images/font.gif');
 
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-attachment:fixed;
+  background-position:center;
+  width: 100%;
+  height: 100vh;
+
+}
 .landingConteiner{
- 
+
   height: 100vh;
    width: 100vw;
 
@@ -22,6 +33,9 @@ flex-direction: column;
 flex-wrap: nowrap;
 align-content: center;
 justify-content: center;
+
+
+
 }
 
 

@@ -6,9 +6,10 @@ import Home from './components/Home/Home';
 
 function App() {
   return (
+    
  <BrowserRouter>
     <Routes>
-  <Route path="/" element={<LandingPage></LandingPage>}/>
+  <Route path="/" element={<LandingPage ></LandingPage>}/>
   <Route path='/home' element={<Home></Home>}/>
 
 

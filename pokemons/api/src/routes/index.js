@@ -77,7 +77,7 @@ const evolution = async (evol) => {
 } 
 
 const getApiInfo = async () => {
-    const apiUrl = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=20");
+    const apiUrl = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=100");
     const results = apiUrl.data.results
     const pokemonInfo = []
     for(let i = 0 ; i < results.length ; i++){
@@ -211,6 +211,25 @@ router.get("/pokemons", async (req, res) => {
         return res.status(200).send(pokemonsTotal);
     }
 });
+
+// router.get("/pokemons", async (req,res)=>{
+// try{
+//     const name = req.query.name;
+// if(name){
+//     const pokemonName= await getPokeInfoxName(name.toLowerCase());
+//     if(pokemonName)return res.status(200).send([pokemonName]);
+// }
+
+// }catch(error)
+// {
+//     return res.status(404).json({error: error.message})
+// }
+
+// })
+
+
+
+
 
 router.get('/types', async (req, res) => {
     const typesApi = await axios.get("https://pokeapi.co/api/v2/type");

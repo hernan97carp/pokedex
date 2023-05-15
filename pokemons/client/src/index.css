@@ -10,20 +10,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: #ffc000; */
-  background-image:url('./images//font.gif');
-
-  background-repeat: no-repeat;
-  background-size:cover;
-  background-attachment:fixed;
-  background-position: center center;
+  background-color: #5cdba4;
 
 }
 *::before,
 *::after {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+
 }
 
 code {

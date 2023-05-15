@@ -1,0 +1,73 @@
+.paginadoButton{
+background-color: brown;
+color: black;
+
+}
+.pagination{
+display:flex;
+flex-direction:row;
+justify-content:center;
+flex-wrap: wrap;
+align-items: center;
+margin: 2rem;
+}   
+
+.list{
+    list-style: none;
+    display: block;
+}
+
+.buttons{
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8em;
+    margin: 10px;
+    border-radius: 20%;
+    background: black;
+    color:white;
+    max-width: auto;
+    border: 1px solid white;
+    min-width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0 6px;
+    
+}
+
+.buttons:hover {
+    background-color: white;
+    color: black;
+    border-radius: 100%;
+    border: 1px solid black;
+    font-size:1em;
+
+  }
+
+
+  @media (max-width:432px) {
+    
+
+        .buttons{
+
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8em;
+            margin: 0.3em;
+            border-radius: 20%;
+            background: black;
+            color:white;
+            max-width: auto;
+            border: 1px solid white;
+            min-width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 0 6px;
+            
+        }
+        
+  }
