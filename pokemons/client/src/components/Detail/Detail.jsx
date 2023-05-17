@@ -4,7 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { getDetail } from "../../redux/Action/action";
 import "./detail.css";
 import random from "../../images/random.png";
+
 import loading from "../../images/loang.gif";
+
 // import style from "./Detail.module.css";
 
 import heartImg from "../../images/cards/health.png";
