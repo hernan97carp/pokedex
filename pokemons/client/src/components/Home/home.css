@@ -35,7 +35,7 @@
 
 .reload:hover{
     box-shadow: 0 0px 0px 0 rgba(0, 40, 120, 0);
- 
+   color: #fad964;
     transform: translateY(-5px);
 }
 .pika{
@@ -65,7 +65,6 @@
 }
 
 
-
 select {
     cursor: pointer;
     box-shadow: white;
@@ -83,7 +82,7 @@ select {
     margin-right: 2rem;
     border-radius: 20px;
     outline: none;
-    color: white;
+    color: #ffffff;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -99,22 +98,20 @@ select option{
 
 
 /* Loading  */
-
+.loadingConteiner{
+    display: flex;
+ align-items: center;
+ flex-direction: row;
+ flex-wrap: wrap;
+ justify-content: center;
+}
 .loading{
-    position: absolute;
-    width: 100%;
-    max-height: 100vh;
-
-    padding-top: 5%;
     
+    width: 50%;
+    max-height: 50%
+  
 }
 
-.loadingtext{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-    color: black;
-}
 
 .notfound{
     margin-top: 2%;

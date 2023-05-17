@@ -15,11 +15,10 @@ import Card from "../Card/Card";
 // import Paginado from '../Paginado/Paginado';
 import NavBar from "../NavBar/NavBar";
 import notFound from "../../images/random.png";
-import "./home.css"
 import pika from "../../images/reload1.webp";
 import NavSearch from "../NavSearch/NavSearch";
-import pikapika from "../../images/loading.gif";
-
+import loading from "../../images/loang.gif";
+import "./home.css"
 export default function Home() {
 
 
@@ -178,8 +177,8 @@ function handleFilterByType(evento){
 
    
     :
-    <div>
-      <img src={pikapika} width="100px"></img>
+    <div className="loadingConteiner">
+      <img src={loading} className="loading"></img>
     </div>
     }
                 
