@@ -1,102 +1,163 @@
-.conteinerGeneral{
-    /* display: flex;
+.conteinerLoading {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+.loading {
+  margin-top: 6rem;
+  margin-bottom: 10000px;
+  width: 350px;
+  height: 250px;
+}
+
+.conteinerGeneral {
+  /* display: flex;
     flex-direction: column;
 flex-wrap: wrap;
 align-content: flex-start; */
-display: flex;
-flex-direction: wrap;
-flex-wrap: wrap;
-align-content: normal;
-justify-content: normal;
-align-items: stretch;
-font-family: 'Montserrat', sans-serif; 
-
+  display: flex;
+  flex-direction: wrap;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: normal;
+  align-items: stretch;
+  font-family: "Montserrat", sans-serif;
 }
 
-.titulopokemon{
-color: #fad964;
-font-size: 1.4rem;
-margin: 1rem 0.6rem 0.9rem 1rem;
+.titulopokemon {
+  font-size: 1.4rem;
+  margin: 1rem 0.6rem 0.9rem 1rem;
+  color: #fad964;
 }
-.titulopokemon h1{
- margin: 1rem;
-}
-
-.titulopokemon p{
-    color: #fdfbff;
-    font-size: 0.9rem;
-    margin-top: 1px;
-    margin-left: 1rem;
-    }
-.details{
-    color: white;
-    font-size: 1.7rem;
-    margin-top: 2rem;
-    margin-bottom: 0.7rem;
-}
-.types{
-display: flex;
-align-items: end;
+.titulopokemon h1 {
+  margin: 1rem;
 }
 
-.bar{
-    color: black;
+.typeImg {
+  margin-top: 2rem;
+  height: 100px;
 }
 
-
-.imagenPokemon{
-    width: 250px;
-    height: 250px;
-    margin: 7rem 0.6rem 0.9rem 1rem;
+.titulopokemon p {
+  color: #fdfbff;
+  font-size: 0.9rem;
+  margin-top: 1px;
+  margin-left: 1rem;
+}
+.details {
+  color: white;
+  font-size: 1.7rem;
+  margin-top: 4rem;
+}
+.typess {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  margin-top: 4rem;
 }
 
-.stats{
-    display: flex;
-flex-direction: column;
-align-items: flex-start;
-flex-wrap: wrap;
-margin-left: 3em;
-font-family: 'Montserrat', sans-serif; 
+.bar {
+  color: black;
+  font-size: 1.2rem;
+  margin: 1rem;
 }
 
-
-.info {
-    margin-top: 0.3rem;
-    margin-bottom: 0.3rem;
+.imagenPokemon {
+  width: 250px;
+  height: 250px;
+  margin: 7rem 0.6rem 0.9rem 1rem;
+}
+.imagenes {
+  width: 40px;
+  height: 30px;
+}
+.statss {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-left: 3em;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 100vh;
 }
 
-.description{
-    color: rgb(255, 255, 255);
-    font-size: 1rem;
+.heightAndWeight {
+  color: #ffffff;
+}
+.infoo {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
 }
 
+.description {
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+}
 
+.progress {
+  height: 20px;
+  width: 100%;
+  left: 0;
+  background: #ffffff;
+  position: relative;
+  transform: scaleX(0);
+  transform-origin: left;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(240, 221, 11, 0.05),
+    0 1px rgba(255, 255, 255, 0.8);
+  animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
 
-.types img{
-    width:70px;
+/* con esto marco cuanta cantidad de vida,ataque,etc tiene la barra */
+.hp::after {
+  content: attr();
+}
+.attack::after {
+  content: attr(per);
+}
+.defense::after {
+  content: attr(per);
+}
+.speed::after {
+  content: attr(per);
+}
+.weight::after {
+  content: attr(per);
+}
+.height::after {
+  content: attr(per);
+}
+
+.types img {
+  width: 70px;
 }
 .green-color {
-    color:green;
-}
- 
-
-.info span img{
-    width:16px;
-    height: 16px;
-    background-image: aqua;
+  color: green;
 }
 
-
-
-
-.loading img{
-    width: 50%;
-    max-height: 50%
+.info span img {
+  width: 16px;
+  height: 16px;
+  background-image: aqua;
 }
-@media (max-width:565px){
 
-    .conteinerGeneral{
-        /* display: flex;
+.loading img {
+  width: 50%;
+  max-height: 50%;
+}
+@media (max-width: 565px) {
+  .conteinerGeneral {
+    /* display: flex;
         flex-direction: column;
     flex-wrap: wrap;
     align-content: flex-start; */
@@ -106,31 +167,23 @@ font-family: 'Montserrat', sans-serif;
     align-content: normal;
     justify-content: normal;
     align-items: center;
-    font-family: 'Montserrat', sans-serif; 
-    }
+    font-family: "Montserrat", sans-serif;
+  }
 
+  .imagenPokemon {
+    width: 250px;
+    height: 250px;
 
- 
-    .imagenPokemon{
-       
+    margin: 1rem 0.6rem 0.9rem 1rem;
+  }
 
-        width: 250px;
-        height: 250px;
-       
-        margin: 1rem 0.6rem 0.9rem 1rem;
-    }
+  .types {
+    display: flex;
+    justify-content: center;
 
-    .types{
-        display: flex;
-        justify-content: center;
-        
-        align-items: flex-end;
-        }
-        
-
-
+    align-items: flex-end;
+  }
 }
 
-@media (max-width:516) {
-    
+@media (max-width: 516) {
 }

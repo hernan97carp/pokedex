@@ -7,6 +7,7 @@
 display: flex;
 flex-direction: column;
 flex-grow: wrap;
+justify-content: center;
 text-align: center;
 float: left;
 margin: 1rem 0px 1rem 2rem;
