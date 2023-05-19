@@ -252,7 +252,7 @@ router.post("/pokemons", async (req, res) => {
     height,
     weight,
     img,
-    createdInDb,
+    createdInDb: true,
   });
 
   const pokemonTypes = await Type.findAll({

@@ -134,6 +134,7 @@ export default function PokemonCreate() {
         weight: "",
         height: "",
         types: [],
+        img: "",
       });
       history.push("/home");
     } else {
