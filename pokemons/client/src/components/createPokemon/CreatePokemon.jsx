@@ -382,9 +382,10 @@ export default function PokemonCreate() {
             <div className={style.formdiv}>
               <label>imagen</label>
               <input
-                type="text"
-                value={input.img}
+                type="file"
                 name="img"
+                accept="image/*"
+                value={input.img}
                 onChange={(e) => handleChange(e)}
                 style={
                   input.img.length
