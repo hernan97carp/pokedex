@@ -71,9 +71,9 @@ export default function validate(input, pokemons) {
     errors.types = `You can't choose more than 2 types per Pokemon`;
   }
 
-  // if (!input.img) {
-  //   errors.img = "A image is required copy a url";
-  // }
+  if (!input.img) {
+    errors.img = "A image is required copy a url";
+  }
 
   return errors;
 }

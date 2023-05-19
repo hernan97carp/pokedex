@@ -27,6 +27,7 @@ export default function PokemonCreate() {
     weight: "",
     height: "",
     types: [],
+    img: "",
   });
 
   const typesColors = {
@@ -376,6 +377,40 @@ export default function PokemonCreate() {
                 <i></i>
               )}
             </div>
+
+            <div className={style.formdiv}>
+              <label>imagen</label>
+              <input
+                type="text"
+                value={input.img}
+                name="img"
+                onChange={(e) => handleChange(e)}
+                style={
+                  input.img.length
+                    ? errors.img
+                      ? { borderColor: "#e74c3c" }
+                      : { borderColor: "#2ecc71" }
+                    : {}
+                }
+              />
+              {errors.img ? (
+                <div>
+                  <i
+                    className="fas fa-exclamation-circle"
+                    style={{ color: "#e74c3c" }}
+                  ></i>
+                  <p>{errors.img}</p>
+                </div>
+              ) : input.img.length ? (
+                <i
+                  className="fas fa-check-circle"
+                  style={{ color: "#2ecc71" }}
+                ></i>
+              ) : (
+                <i></i>
+              )}
+            </div>
+
             <button
               className={style.next}
               onClick={(e) => {
