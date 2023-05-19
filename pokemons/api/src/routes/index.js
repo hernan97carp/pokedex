@@ -73,6 +73,63 @@ const getApiInfo = async () => {
   return pokemonInfo;
 };
 
+// const getApiInfo = async () => {
+//   const apiUrl = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=50");
+
+//   let arrayResultApi = apiUrl.data.results;
+//   let arrayPromises = [];
+//   arrayResultApi.map((p) => arrayPromises.push(axios(p.url)));
+
+//   await Promise.All(arrayPromises).then((pokemons) => {
+//     array = arrayPromises.map((p) => {
+//       return {
+//         id: p.data.id,
+//         name: p.data.name,
+//         types: p.data.types.map((t) => t.type.name),
+//         img: p.data.sprites.other["official-artwork"].front_default,
+//         attack: p.data.stats[1].base_stat,
+//         weight: p.data.weight,
+//         height: p.data.height,
+//       };
+//     });
+//     return arrayResultApi;
+//   });
+// };
+
+// const getApiInfo = async () => {
+//   let arrayPokemonsApi = [];
+
+//   // carga de pokeAPI -----------------------------------------
+//   await axios
+//     .get("https://pokeapi.co/api/v2/pokemon?limit=100")
+//     .then(async (response) => {
+//       let arrayResultApi = response.data.results;
+//       let arrayPromises = [];
+//       arrayResultApi.map((p) => arrayPromises.push(axios.get(p.url)));
+//       // se obtiene uno por uno los datos de cada pokemon
+
+//       await Promise.all(arrayPromises).then((pokemons) => {
+//         arrayPokemonsApi = pokemons.map((p) => {
+//           return {
+//             id: p.data.id,
+//             name: p.data.name,
+//             types: p.data.types.map((t) => t.type.name),
+//             img: p.data.sprites.other["official-artwork"].front_default,
+//             attack: p.data.stats[1].base_stat,
+//             weight: p.data.weight,
+//             height: p.data.height,
+//           }; // return
+//         }); // map
+//       });
+//       return arrayPokemonsApi;
+//     })
+//     .catch((error) => {
+//       return error;
+//     });
+//   // ------------------------------- end - carga de poke API
+//   return arrayPokemonsApi;
+// };
+
 const getDbInfo = async () => {
   const data = (
     await Pokemon.findAll({
