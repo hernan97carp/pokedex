@@ -230,36 +230,53 @@ router.get("/types", async (req, res) => {
 });
 
 router.post("/pokemons", async (req, res) => {
-  const {
-    name,
-    types,
-    hp,
-    attack,
-    defense,
-    speed,
-    height,
-    weight,
-    img,
-    createdInDb,
-  } = req.body;
+  try {
+    const {
+      name,
+      types,
+      hp,
+      attack,
+      defense,
+      speed,
+      height,
+      weight,
+      img,
+      createdInDb,
+    } = req.body;
 
-  const pokemonCreated = await Pokemon.create({
-    name,
-    hp,
-    attack,
-    defense,
-    speed,
-    height,
-    weight,
-    img,
-    createdInDb: true,
-  });
+    if (
+      !name &&
+      !types &&
+      !hp &&
+      !attack &&
+      !defense &&
+      !speed &&
+      !height &&
+      !weight &&
+      !img
+    )
+      throw Error("complete everything");
 
-  const pokemonTypes = await Type.findAll({
-    where: { name: types },
-  });
-  pokemonCreated.addType(pokemonTypes);
-  return res.send("Pokemon created successfuly");
+    const pokemonCreated = await Pokemon.create({
+      name,
+      hp,
+      attack,
+      defense,
+      speed,
+      height,
+      weight,
+      img,
+      createdInDb: true,
+    });
+
+    const pokemonTypes = await Type.findAll({
+      where: { name: types },
+    });
+    pokemonCreated.addType(pokemonTypes);
+    return res.send("Pokemon created successfuly");
+  } catch (error) {
+    res.status(404).send("not created");
+  }
 });
 
 router.get("/pokemons/:idPokemon", async (req, res) => {
