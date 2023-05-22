@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Detail from "./components/Detail/Detail";
 import CreatePokemon from "./components/createPokemon/CreatePokemon";
-
+import Error404 from "./components/Error404/Error404";
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +17,7 @@ function App() {
           path="/pokemonCreate"
           element={<CreatePokemon></CreatePokemon>}
         />
+        <Route path="/*" element={<Error404></Error404>}></Route>
       </Routes>
     </BrowserRouter>
   );

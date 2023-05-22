@@ -1,0 +1,63 @@
+.conteinerImg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+  width: 100vw;
+  height: 100vh;
+}
+
+.images404 {
+  animation: loader 1.25s infinite;
+  background-color: red;
+  height: 200px;
+  margin-top: 4rem;
+  color: #00136c;
+  display: flex;
+  box-shadow: -2px 70px 233px 200px rgba(14, 175, 161, 0.84);
+  -webkit-box-shadow: -2px 30px 220px 100px rgba(223, 215, 198, 0.84);
+  -moz-box-shadow: -2px 70px 233px 200px rgba(36, 116, 126, 0.84);
+
+  justify-content: center;
+  align-items: center;
+  animation-duration: 4s;
+}
+
+@keyframes loader {
+  0% {
+    rotate: 0deg;
+    border-radius: 0px;
+  }
+  30% {
+    border-radius: 30%;
+  }
+  50% {
+    border-radius: 50%;
+  }
+  70% {
+    border-radius: 70%;
+  }
+  100% {
+    border-radius: 100%;
+    rotate: 360deg;
+  }
+}
+
+.text404 h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 4rem;
+  color: black;
+  margin-top: 4.4rem;
+}
+
+.pagnotfound h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: black;
+  margin-top: 0px;
+}
+
+.imgNotFound {
+  width: 10%;
+}

@@ -18,13 +18,19 @@
     flex-direction: column;
 flex-wrap: wrap;
 align-content: flex-start; */
+  display: block;
+
+  font-family: "Montserrat", sans-serif;
+  width: 100vw;
+  height: 300vh;
+}
+.conteinerDetail {
   display: flex;
   flex-direction: wrap;
   flex-wrap: wrap;
   align-content: normal;
   justify-content: normal;
   align-items: stretch;
-  font-family: "Montserrat", sans-serif;
 }
 
 .titulopokemon {
@@ -54,7 +60,7 @@ align-content: flex-start; */
 }
 .typess {
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: center;
   margin-top: 4rem;
 }
@@ -153,8 +159,9 @@ align-content: flex-start; */
   background-color: #000000;
   transform: scaleX(0);
   height: 25px;
-  padding: 5px;
+  padding: 1px;
   width: 400px;
+
   margin: 50px 0;
   border-radius: 5px;
   box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
@@ -284,5 +291,45 @@ align-content: flex-start; */
   100% {
     box-shadow: 0 5px 5px rgba(255, 255, 255, 0.7) inset,
       0 -5px 5px rgba(255, 255, 255, 0.7) inset;
+  }
+}
+@media (max-width: 948px) {
+  .buttonDetail {
+    width: 80px;
+    height: 60px;
+    border-radius: 10px;
+
+    box-sizing: border-box;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 10%;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+
+    margin-top: 4rem;
+    margin-left: 2rem;
+
+    font-size: 0.9em;
+    font-weight: 500;
+    box-shadow: 0 2px 8px -1px white;
+    animation: showText 2s 1s linear forwards;
+    transition: all 0.5s ease;
+  }
+}
+
+@media (max-width: 477px) {
+  .progress-bar {
+    display: flex;
+    background-color: #000000;
+    transform: scaleX(0);
+    height: 25px;
+    padding: 5px;
+    width: 200px;
+    margin: 50px 0;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
+    animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
   }
 }
