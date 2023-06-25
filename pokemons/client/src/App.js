@@ -6,7 +6,7 @@ import Detail from "./components/Detail/Detail";
 import CreatePokemon from "./components/createPokemon/CreatePokemon";
 import Error404 from "./components/Error404/Error404";
 import axios from "axios";
-axios.defaults.baseURL = "https://pokedex-production-ee31.up.railway.app";
+axios.defaults.baseURL = "https://pokedex-production-ee31.up.railway.app/";
 function App() {
   return (
     <BrowserRouter>
