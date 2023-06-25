@@ -5,6 +5,7 @@ import { postPokemon, getTypes, getPokemons } from "../../redux/Action/action";
 import style from "./PokemonCreate.module.css";
 import validate from "./validate.js";
 import Oak from "../../images/profesor.png";
+import swal from "sweetalert";
 import { useHistory } from "react-router-use-history";
 
 export default function PokemonCreate() {
@@ -81,7 +82,7 @@ export default function PokemonCreate() {
 
     Object.keys(errors).length === 1 && errors.types.length
       ? setSection(section === 1 ? 2 : 1)
-      : alert("You must complete the form correctly!");
+      : swal("You must complete the form correctly!", "", "error");
   }
 
   function handleChecked(e) {
@@ -124,7 +125,7 @@ export default function PokemonCreate() {
     if (Object.keys(errors).length === 0 && input.name.length) {
       dispatch(postPokemon(input));
       dispatch(getPokemons());
-      alert("good job pokemon created");
+      swal("Good job!", "Pokemon created successfuly!", "success");
       setInput({
         name: "",
         hp: "",
@@ -138,7 +139,7 @@ export default function PokemonCreate() {
       });
       history.push("/home");
     } else {
-      alert("You must choose at least one type!");
+      swal("You must choose at least one type!", "", "error");
     }
   }
 
@@ -392,9 +393,8 @@ export default function PokemonCreate() {
             <div className={style.formdiv}>
               <label>imagen</label>
               <input
-                type="file"
+                type="text"
                 name="img"
-                accept="image/*"
                 value={input.img}
                 onChange={(e) => handleChange(e)}
                 style={
@@ -404,13 +404,9 @@ export default function PokemonCreate() {
                       : { borderColor: "#2ecc71" }
                     : {}
                 }
-              />
+              />{" "}
               {errors.img ? (
                 <div>
-                  <i
-                    className="fas fa-exclamation-circle"
-                    style={{ color: "#e74c3c" }}
-                  ></i>
                   <p>{errors.img}</p>
                 </div>
               ) : input.img.length ? (

@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getDetail } from "../../redux/Action/action";
+import { getDetail, removeDetail } from "../../redux/Action/action";
 import "./detail.css";
-
+import { motion } from "framer-motion";
 import loading from "../../images/loang.gif";
 
 // import style from "./Detail.module.css";
@@ -16,6 +16,7 @@ import happy from "../../images/cards/happy.png";
 import pokedex from "../../images/cards/pokedex.png";
 import height from "../../images/cards/height.svg";
 import weight from "../../images/cards/weight.svg";
+
 //useParams, that returns an object with all variables inside your route
 
 function Detail(props) {
@@ -27,7 +28,13 @@ function Detail(props) {
   useEffect(() => {
     dispatch(getDetail(id));
   }, [dispatch]);
-  console.log(id);
+
+  useEffect(() => {
+    // Limpiar el estado de pokemonDetails al desmontar el componente
+    return function cleanup() {
+      dispatch(removeDetail());
+    };
+  }, []);
 
   if (myPokemon[0] === undefined)
     return (
@@ -36,11 +43,30 @@ function Detail(props) {
       </div>
     );
 
-  return (
-    <div className="conteinerGeneral">
-      {/* myPokemon.length && myPokemon[0].id == id  */}
+  const image = {
+    hidden: {
+      x: "-100vw",
+    },
+    visible: {
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 60,
+        delay: 0.5,
+      },
+    },
+  };
 
+  return (
+    <div className="conteinerGeneraal">
+      {/* myPokemon.length && myPokemon[0].id == id  */}
       <div className="conteinerDetail">
+        <div className="buttonConteiner">
+          <Link to="/home">
+            <button className="buttonDetail">Back</button>
+          </Link>
+        </div>
+
         <div className="titulopokemon">
           <h1>
             {myPokemon[0].name.charAt(0).toUpperCase() +
@@ -48,7 +74,16 @@ function Detail(props) {
           </h1>
           <p>Pokedex N°{myPokemon[0].id}</p>
         </div>
-        {<img src={myPokemon[0].img} alt="imagen" className="imagenPokemon" />}
+        {
+          <motion.img
+            src={myPokemon[0].img}
+            alt="imagen"
+            className="imagenPokemon"
+            variants={image}
+            initial="hidden"
+            animate="visible"
+          />
+        }
 
         <div className="typess">
           {myPokemon[0].types ? (
@@ -233,11 +268,6 @@ function Detail(props) {
           </div>
 
           {/* div de stats  abajo*/}
-        </div>
-        <div className="buttonConteiner">
-          <Link to="/home">
-            <button className="buttonDetail">Back</button>
-          </Link>
         </div>
       </div>
     </div>

@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import LandingPage from "./components/Landing/LandingPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -6,6 +5,8 @@ import Home from "./components/Home/Home";
 import Detail from "./components/Detail/Detail";
 import CreatePokemon from "./components/createPokemon/CreatePokemon";
 import Error404 from "./components/Error404/Error404";
+import axios from "axios";
+axios.defaults.baseURL = "http://localhost:3001";
 function App() {
   return (
     <BrowserRouter>

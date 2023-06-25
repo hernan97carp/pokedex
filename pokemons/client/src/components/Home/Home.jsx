@@ -86,55 +86,70 @@ export default function Home() {
       <div className="home">
         {/*BARRA NAVEGACION */}
         <NavBar />
-        {/*BARRA DE BUSQUEDA */}
-        <NavSearch />
 
-        <button onClick={(evento) => handlerReload(evento)} className="reload">
-          <img src={pika} className="pika" alt="imagen pikachu"></img>Reload
-        </button>
+        {/*BARRA DE BUSQUEDA */}
+
+        <NavSearch />
+        {currentPokemons.length ? (
+          <button
+            onClick={(evento) => handlerReload(evento)}
+            className="reload"
+          >
+            <img src={pika} className="pika" alt="imagen pikachu"></img>Reload
+          </button>
+        ) : (
+          <i></i>
+        )}
 
         {/* FILTRAR Y ORDENAR */}
+        {currentPokemons.length ? (
+          <div className="selects">
+            <select onChange={(evento) => handleOrder(evento)}>
+              <option value="normal">Normal</option>
+              <option value="asc">A - Z</option>
+              <option value="desc">Z - A</option>
+              <option value="HAttack">Highest Attack</option>
+              <option value="LAttack">Lowest Attack</option>
+            </select>
 
-        <div className="selects">
-          <select onChange={(evento) => handleOrder(evento)}>
-            <option value="normal">Normal</option>
-            <option value="asc">A - Z</option>
-            <option value="HAttack">Highest Attack</option>
-            <option value="LAttack">Lowest Attack</option>
-          </select>
-
-          <select onChange={(evento) => handleFilterCreated(evento)}>
-            <option value="All">All</option>
-            <option value="api">Api</option>
-            <option value="created">Created</option>
-          </select>
-          <select onChange={(evento) => handleFilterByType(evento)}>
-            <option value="All">All types</option>
-            {types.map((type) => (
-              <option value={type.name} key={type.name}>
-                {type.name}
-              </option>
-            ))}
-          </select>
-        </div>
+            <select onChange={(evento) => handleFilterCreated(evento)}>
+              <option value="All">All</option>
+              <option value="api">Api</option>
+              <option value="Created">Created</option>
+            </select>
+            <select onChange={(evento) => handleFilterByType(evento)}>
+              <option value="All">All types</option>
+              {types.map((type) => (
+                <option value={type.name} key={type.name}>
+                  {type.name}
+                </option>
+              ))}
+            </select>
+          </div>
+        ) : (
+          <i></i>
+        )}
 
         {/* FIN DE  FILTRAR Y ORDENAR */}
 
         {/* PAGINADO       */}
-        <Paginado
-          //POKEMONES POR PAGINA QUE VA A TENER ...12
-          pokemonsPerPage={pokemonsPerPage}
-          allPokemons={allPokemons.length}
-          paginado={paginado}
-          page={currentPage}
-        />
-        {/*SHOW CARTS */}
+        {currentPokemons.length ? (
+          <Paginado
+            pokemonsPerPage={pokemonsPerPage}
+            allPokemons={allPokemons.length}
+            paginado={paginado}
+            page={currentPage}
+          ></Paginado>
+        ) : (
+          <img src={loading} className="loading"></img>
+        )}
 
         {currentPokemons.length ? (
           typeof currentPokemons[0] === "object" ? (
             currentPokemons.map((el) => {
               return (
                 <div>
+                  <div></div>
                   <Link
                     to={"/home/" + el.id}
                     style={{ textDecoration: "none" }}
@@ -163,9 +178,7 @@ export default function Home() {
             </div>
           )
         ) : (
-          <div className="loadingConteiner">
-            <img src={loading} className="loading"></img>
-          </div>
+          <i></i>
         )}
       </div>
     </>

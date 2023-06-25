@@ -1,68 +1,56 @@
-
-.navForm{
-   
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    height: 4rem;
-   
+.navForm {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
 }
-.navInput{
-outline: 'none';
-width: 15rem;
-height:3rem;
-border-radius: 0.6em;
-margin-right: 0.5em;
-border: 2px solid black;
-background:#007c8a;  
-outline: none;
-color: white;
-font-size: 14px;
-transition: 0.4s; 
-line-height: 40px;
-box-shadow: 0 2px 8px -1px #02a9c3;
+.navInput {
+  outline: "none";
+  width: 15rem;
+  height: 3rem;
+  border-radius: 0.6em;
+  margin-right: 0.5em;
+  border: 2px solid black;
+  background: #007c8a;
+  outline: none;
+  color: white;
+  font-size: 14px;
+  transition: 0.4s;
+  line-height: 40px;
+  box-shadow: 0 2px 8px -1px #02a9c3;
 
-
-font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
-.navInput::placeholder{
-    color: rgba(0, 0, 0, 0.508);
+.navInput::placeholder {
+  color: rgba(0, 0, 0, 0.508);
 }
 
-.navButton{
-
-width: auto;
-margin: 0.1rem;
-padding: 0.3rem;
-border-radius: 30%;  
-border: 1px solid rgb(5, 3, 0);
-background: white;
-
-
+.navButton {
+  width: auto;
+  margin: 0.1rem;
+  padding: 0.3rem;
+  border-radius: 30%;
+  border: 1px solid rgb(5, 3, 0);
+  background: white;
 }
 
-.navButton:hover{
-    background-color: white;
-border: 1px solid rgb(188, 211, 182);
-border-radius: 100%;
-
-
+.navButton:hover {
+  background-color: white;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 100%;
 }
 
-.pokeball{
-width:2rem;
-border-radius: 100%;
-cursor: pointer;
-
+.pokeball {
+  width: 2rem;
+  border-radius: 100%;
+  cursor: pointer;
 }
 
-
-@media (max-width:292px){
-    .navInput{
-     width: 50%;
-
-    }
-    }
+@media (max-width: 292px) {
+  .navInput {
+    width: 50%;
+  }
+}
